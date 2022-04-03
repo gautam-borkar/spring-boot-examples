@@ -1,9 +1,9 @@
 <html>
   <head>
-    <title>${username}'s Todo List</title>
+    <title>Todo List for ${username}</title>
   </head>
 
   <body>
-    Here is your todo list :- ${todoList}
+    Here is ${username} todo list :- ${todoList}
   </body>
 </html>

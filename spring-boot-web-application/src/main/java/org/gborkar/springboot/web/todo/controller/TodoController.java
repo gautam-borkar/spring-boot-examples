@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
+@SessionAttributes("username")
 public class TodoController {
 
   @Autowired
@@ -14,7 +16,7 @@ public class TodoController {
   
   @RequestMapping("/listTodo")
   public String listTodo(ModelMap modelMap){
-    modelMap.put("todoList", todoService.retrieveTodos("dummy"));
+    modelMap.put("todoList", todoService.retrieveTodos((String) modelMap.get("username")));
     return "listTodo";
   }
 }

@@ -1,6 +1,6 @@
-package org.gborkar.springboot.web.controller;
+package org.gborkar.springboot.web.login.controller;
 
-import org.gborkar.springboot.web.service.LoginService;
+import org.gborkar.springboot.web.login.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

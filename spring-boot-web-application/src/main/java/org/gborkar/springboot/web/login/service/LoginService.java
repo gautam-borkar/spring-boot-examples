@@ -1,8 +1,8 @@
-package org.gborkar.springboot.web.service;
+package org.gborkar.springboot.web.login.service;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class LoginService {
 
   public boolean isValidUser(String username, String password) {

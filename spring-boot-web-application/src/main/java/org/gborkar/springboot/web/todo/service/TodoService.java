@@ -20,6 +20,10 @@ public class TodoService {
         false));
   }
 
+  public void addUpdateTodo(Todo todo) {
+    todoList.add(todo);
+  }
+
   public List<Todo> retrieveTodos(String username) {
     List<Todo> todoForUser = todoList.stream().filter(todo -> todo.getUsername().equalsIgnoreCase(username))
     .collect(Collectors.toList());

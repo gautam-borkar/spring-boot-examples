@@ -3,6 +3,7 @@ package org.gborkar.springboot.web.todo.service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.gborkar.springboot.web.todo.model.Todo;
 import org.springframework.stereotype.Service;
@@ -20,14 +21,9 @@ public class TodoService {
   }
 
   public List<Todo> retrieveTodos(String username) {
-    List<Todo> returList = new ArrayList<>();
+    List<Todo> todoForUser = todoList.stream().filter(todo -> todo.getUsername().equalsIgnoreCase(username))
+    .collect(Collectors.toList());
 
-    for (Todo todo : todoList) {
-      if (todo.getUsername().equalsIgnoreCase(username)) {
-        returList.add(todo);
-      }
-    }
-
-    return returList;
+    return todoForUser;
   }
 }
